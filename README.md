@@ -3,6 +3,13 @@
 A MERN-stack web application that helps students track subject-wise attendance and manage
 assignments and deadlines from a single dashboard.
 
+## Live Demo
+
+- **App:** https://student-tracker-swart-nine.vercel.app
+- **API health check:** https://student-tracker-ufxl.onrender.com/api/health
+
+The backend is on a free plan that sleeps when idle, so the first request can take up to a minute.
+
 ## Features
 
 - Register and log in (JWT authentication, bcrypt-hashed passwords)
