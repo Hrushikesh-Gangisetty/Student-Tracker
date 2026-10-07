@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Project colours and fonts. Tailwind turns these into classes like bg-brand-600 or bg-page. */
+@theme {
+  --color-page: #f5f3ee;
+  --color-surface: #ffffff;
+  --color-brand-50: #eef3f9;
+  --color-brand-100: #d9e4f2;
+  --color-brand-500: #3d6aa3;
+  --color-brand-600: #1f3f6b;
+  --color-brand-700: #1a3459;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+/* Dark mode: every colour is a CSS variable, so the dark theme only has to swap the values.
+   The "dark" class is put on <html> by the theme button in the sidebar. */
+.dark {
+  color-scheme: dark;
+  --color-page: #141312;
+  --color-surface: #1c1b1a;
+  --color-stone-50: #232220;
+  --color-stone-100: #2a2927;
+  --color-stone-200: #33312f;
+  --color-stone-300: #45423f;
+  --color-stone-400: #7d7873;
+  --color-stone-500: #a39e98;
+  --color-stone-600: #c4bfb9;
+  --color-stone-700: #d9d5d0;
+  --color-stone-900: #f3f1ee;
+  --color-brand-50: #1b2636;
+  --color-brand-100: #24344b;
+  --color-brand-500: #6d9bd6;
+  --color-brand-600: #3f6fb0;
+  --color-brand-700: #a9c6ec;
+  --color-green-50: #14261b;
+  --color-green-200: #1f4a30;
+  --color-green-600: #4ade80;
+  --color-green-700: #6ee7a0;
+  --color-green-800: #86efac;
+  --color-amber-50: #2a2010;
+  --color-amber-200: #5a4215;
+  --color-amber-700: #fcd34d;
+  --color-red-50: #2b1616;
+  --color-red-200: #5a2424;
+  --color-red-600: #f87171;
+  --color-red-700: #fca5a5;
+  --color-red-800: #fecaca;
+}
+
+/* A few shared building blocks so the same long class lists are not repeated everywhere. */
+@layer components {
+  .card {
+    @apply rounded-lg border border-stone-200 bg-surface;
+  }
+  .label {
+    @apply mb-1 block text-sm font-medium text-stone-700;
+  }
+  .input {
+    @apply w-full rounded-md border border-stone-300 bg-surface px-3 py-2 text-sm text-stone-900 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+  }
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-secondary {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border border-stone-300 bg-surface px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-50;
+  }
+  .icon-btn {
+    @apply cursor-pointer rounded-md p-2 text-stone-500 hover:bg-stone-100 hover:text-stone-900;
+  }
+}
